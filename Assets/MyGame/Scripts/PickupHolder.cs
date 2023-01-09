@@ -1,18 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PickupHolder : MonoBehaviour
 {
     private bool isholding;
+    public int score;
+    public Text scoreText;
+    public GameObject signalPickUp;
 
     private void Start()
     {
         isholding = false;
+        score = 0;
+    }
+
+    private void Update()
+    {
+        scoreText.text = "Score: " + score.ToString();
+        if (isholding)
+        {
+            signalPickUp.SetActive(true);
+        }
+        else
+        {
+            signalPickUp.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("hgh");
         if (collision.tag == "PickUp")
         {
             isholding = true;
@@ -20,8 +39,12 @@ public class PickupHolder : MonoBehaviour
         }
 
         if (collision.tag == "PointObject")
-        {
-            isholding = false;
+        {           
+            if (isholding)
+            {
+                isholding = false;
+                score++;
+            }
         }
     }
 }
