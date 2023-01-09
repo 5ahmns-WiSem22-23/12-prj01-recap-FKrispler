@@ -545,6 +545,7 @@ MonoBehaviour:
   score: 0
   scoreText: {fileID: 2108211345}
   signalPickUp: {fileID: 327138958}
+  spawner: {fileID: 235058092}
 --- !u!1 &327138958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,7 +1492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -281, y: 232}
+  m_AnchoredPosition: {x: -281, y: 190}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108211345

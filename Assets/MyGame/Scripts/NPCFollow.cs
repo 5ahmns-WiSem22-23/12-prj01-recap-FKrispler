@@ -13,6 +13,8 @@ public class NPCFollow : MonoBehaviour
     // Reference to the player game object
     private GameObject player;
 
+    
+
     // Use this for initialization
     void Start()
     {

@@ -9,6 +9,7 @@ public class PickupHolder : MonoBehaviour
     public int score;
     public Text scoreText;
     public GameObject signalPickUp;
+    public Spawner spawner;
 
     private void Start()
     {
@@ -18,7 +19,7 @@ public class PickupHolder : MonoBehaviour
 
     private void Update()
     {
-        scoreText.text = "Score: " + score.ToString();
+        scoreText.text = "Capital: " + score.ToString() + " €";
         if (isholding)
         {
             signalPickUp.SetActive(true);
@@ -50,8 +51,13 @@ public class PickupHolder : MonoBehaviour
 
             if (collision.tag == "Npc")
             {
-                isholding = false;
-                score--;
+                if (isholding)
+                {
+                    isholding = false;
+                spawner.Spawn();
+                }
+                
+                score--;               
             }
     }
 }

@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
         Spawn();
     }
 
-    void Spawn()
+    public void Spawn()
     {
         Instantiate(pickUp, spawnPoints[Random.Range(0, spawnPoints.Length)]);
     }
