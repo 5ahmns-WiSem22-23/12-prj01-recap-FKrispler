@@ -27,6 +27,7 @@ public class PickupHolder : MonoBehaviour
         {
             signalPickUp.SetActive(false);
         }
+   
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,5 +47,11 @@ public class PickupHolder : MonoBehaviour
                 score++;
             }
         }
+
+            if (collision.tag == "Npc")
+            {
+                isholding = false;
+                score--;
+            }
     }
 }
